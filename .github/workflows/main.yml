@@ -10,3 +10,10 @@ jobs:
       uses: k6io/action@v0.1
       with:
         filename: demo.js
+        summary-export: summary.json
+        out: json
+    - name: Upload k6 summary
+      uses: actions/upload-artifact@v2
+      with:
+        name: k6-summary
+        path: summary.json
